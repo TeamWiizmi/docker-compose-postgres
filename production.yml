@@ -1,0 +1,7 @@
+postgres:
+  extends: 
+    file: docker-compose.yml
+    service: postgres
+  volumes:
+    - './data:/var/lib/postgresql/data'
+  env_file: .env.production
