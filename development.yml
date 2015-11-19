@@ -1,9 +1,0 @@
-postgres:
-  extends: 
-    file: docker-compose.yml
-    service: postgres
-  volumes:
-    - '/home/docker/containers/postgres/data:/var/lib/postgresql/data'
-  environment:
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=postgres
