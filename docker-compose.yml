@@ -1,17 +1,7 @@
-postgres_data:
-  image: busybox:latest
-  container_name: postgres_data
-  command: /bin/echo
-  volumes:
-    - /var/lib/postgresql/data
-
 postgres:
   image: postgres:latest
   container_name: postgres
-  volumes_from:
-    - postgres_data
+  volumes:
+    - 'postgres_data:/var/lib/postgresql/data'
   ports:
     - '127.0.0.1:5432:5432'
-  environment:
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=postgres
