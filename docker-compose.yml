@@ -1,8 +1,15 @@
-postgres:
-  image: postgres:latest
-  container_name: postgres
-  volumes:
-    - 'postgres_data:/var/lib/postgresql/data'
-  ports:
-    - '127.0.0.1:5432:5432'
-  env_file: .env.dev
+version: '2'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    volumes:
+      - 'data:/var/lib/postgresql/data'
+    ports:
+      - '127.0.0.1:5432:5432'
+    env_file: .env.dev
+
+volumes:
+  data:
+    driver: local
